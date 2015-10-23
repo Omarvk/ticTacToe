@@ -7,10 +7,11 @@ import org.junit.Test;
 public class TicTacToe
 {
     //constants
-    static final int XDIMENSION = 3;
-    static final int YDIMENSION = 3;
-    static final int X = 1;
-    static final int O = 2;
+    public static final int XDIMENSION = 3;
+    public static final int YDIMENSION = 3;
+    static final int X = 88;
+    static final int O = 79;
+    static final int EMPTY = 32;
 
     //variables
     private int[][] field = new int[XDIMENSION][YDIMENSION];
@@ -28,15 +29,36 @@ public class TicTacToe
 	{
 	    for(int j = 0; j < YDIMENSION; j++)
 	    {
-	        field[i][j] = 0; 
+	        field[i][j] = EMPTY; 
 	    }
 	}
         return; 
     }
 
+    public void printField()
+    {
+        for(int i = 0; i < XDIMENSION; i++)
+	{
+	    for(int j = 0; j < YDIMENSION; j++)
+	    {
+	        if(j != (YDIMENSION - 1))
+		{
+		    System.out.printf("%c|", field[i][j]); 
+		}
+	    }
+	    System.out.println();
+	    if(i != (XDIMENSION - 1))
+	    {
+		System.out.println("-----");
+	    }
+	}
+    }
+
     public static void main(String[] args)
     {
         TicTacToe game = new TicTacToe();
+	game.initializeField();
+	game.printField();
 	return;
     }
 }

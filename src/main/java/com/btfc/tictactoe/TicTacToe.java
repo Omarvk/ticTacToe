@@ -58,14 +58,14 @@ public class TicTacToe
             return true;	
 	}
 	//check the horizontal and vertical lines
-	for(int i = 0; i < XDIAGONAL; i++)
+	for(int i = 0; i < XDIMENSION; i++)
 	{
 	    if(field[0][i] == field[1][i] && field[0][i] == field[2][i] && field[2][i] == field[1][i] && field[0][i] != EMPTY)
 	    {
 	       return true; 
 	    }
 	}
-	for(int i = 0; i < XDIAGONAL; i++)
+	for(int i = 0; i < XDIMENSION; i++)
 	{
 	    if(field[i][0] == field[i][1] && field[i][0] == field[i][2] && field[i][2] == field[i][1] && field[i][0] != EMPTY)
 	    {

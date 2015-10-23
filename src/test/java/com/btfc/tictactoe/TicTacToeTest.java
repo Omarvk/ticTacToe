@@ -28,4 +28,12 @@ public class TicTacToeTest {
 	//Clear the output, this is apparantly neccessary
 	System.setOut(null);
     }
+
+    @Test
+    public void testIsGameWon()
+    {
+        //We can't actually perform moves yet  
+	assertEquals(1, 1);
+    }
+    
 }

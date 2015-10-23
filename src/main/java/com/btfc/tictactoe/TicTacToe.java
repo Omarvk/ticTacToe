@@ -14,6 +14,7 @@ public class TicTacToe
 
     //variables
     private int[][] field = new int[XDIMENSION][YDIMENSION];
+
      
     //Play a single game of TicTacToe
     public void playRound()

@@ -18,12 +18,19 @@ public class TicTacToe
     //Play a single game of TicTacToe
     public void playRound()
     {
-        return; 
+        initializeField();
     }
 
     //set the whole playing field to 0
     public void initializeField()
     {
+        for(int i = 0; i < XDIMENSION; i++)
+	{
+	    for(int j = 0; j < YDIMENSION; j++)
+	    {
+	        field[i][j] = 0; 
+	    }
+	}
         return; 
     }
 

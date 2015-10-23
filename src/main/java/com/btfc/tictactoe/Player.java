@@ -1,3 +1,10 @@
+package com.btfc.tictactoe;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+
 public class Player
 {
         String name;

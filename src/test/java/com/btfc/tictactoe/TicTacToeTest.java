@@ -11,6 +11,5 @@ public class TicTacToeTest {
     @Test
     public void test() {
         TicTacToe game = new TicTacToe();
-        assertEquals("test", game.test()); 
     }
 }

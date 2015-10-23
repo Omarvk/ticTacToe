@@ -4,15 +4,32 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class TicTacToe{
+public class TicTacToe
+{
+    //constants
+    static final int XDIMENSION = 3;
+    static final int YDIMENSION = 3;
+    static final int X = 1;
+    static final int O = 2;
 
-    public String test()
+    //variables
+    private int[][] field = new int[XDIMENSION][YDIMENSION];
+     
+    //Play a single game of TicTacToe
+    public void playRound()
     {
-	return "test";
+        return; 
+    }
+
+    //set the whole playing field to 0
+    public void initializeField()
+    {
+        return; 
     }
 
     public static void main(String[] args)
     {
-        return; 
+        TicTacToe game = new TicTacToe();
+	return;
     }
 }

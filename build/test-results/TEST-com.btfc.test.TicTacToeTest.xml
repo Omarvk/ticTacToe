@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.btfc.test.TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-10-23T12:40:54" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.001">
+<testsuite name="com.btfc.test.TicTacToeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-10-23T16:22:04" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.001">
   <properties/>
-  <testcase name="test" classname="com.btfc.test.TicTacToeTest" time="0.001"/>
+  <testcase name="testInitializeField" classname="com.btfc.test.TicTacToeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

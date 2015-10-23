@@ -9,8 +9,10 @@ import com.btfc.tictactoe.*;
 public class TicTacToeTest {
 
     @Test
-    public void test() {
+    public void testInitializeField()
+    {
         TicTacToe game = new TicTacToe();
-        assertEquals("test", game.test()); 
+	int[][] emptyArray = new int[game.XDIMENSION][game.YDIMENSION];
+	game.initializeField();
     }
 }

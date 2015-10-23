@@ -3,6 +3,10 @@ package com.btfc.tictactoe;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import java.awt.Point;
+
+import com.btfc.tictactoe.HumanPlayer;
 /*
 Creates a TicTacToe Game
 The playing field array is interperted like the following diagram
@@ -16,12 +20,19 @@ The playing field array is interperted like the following diagram
 public class TicTacToe
 {
     //constants
-    public static final int XDIMENSION = 3;
-    public static final int YDIMENSION = 3;
+    static final int XDIMENSION = 3;
+    static final int YDIMENSION = 3;
     static final int X = 88;
     static final int O = 79;
     static final int EMPTY = 32;
+    HumanPlayer player1;
+    HumanPlayer player2;
 
+    public TicTacToe()
+    {
+        player1 = new HumanPlayer(); 
+        player2 = new HumanPlayer(); 
+    }
     //variables
     private int[][] field = new int[XDIMENSION][YDIMENSION];
 
@@ -29,6 +40,34 @@ public class TicTacToe
     public void playRound()
     {
         initializeField();
+	Point move;
+	int symbol = 0;
+	for(int i = 0; i < XDIMENSION * YDIMENSION; i++)
+	{
+            if(i % 2 == 0)
+	    {
+	        move = player1.makeMove(); 
+		symbol = X;
+	    }	
+            else
+	    {
+	        move = player2.makeMove(); 
+		symbol = O;
+	    }	
+	    field[move.x][move.y] = symbol;
+	    if(isGameWon())
+	    {
+	        if(symbol == X)
+		{
+	            return;	
+		} 
+		else
+		{
+                    return;	
+		}
+	    }
+	    this.printField();
+	}
     }
 
     //set the whole playing field to 0
@@ -75,6 +114,16 @@ public class TicTacToe
         return false;  
     }
 
+    public int getXDimesion()
+    {
+        return XDIMENSION; 
+    }
+
+    public int getYDimesion()
+    {
+        return YDIMENSION; 
+    }
+
     //Print the playing field to console
     public void printField()
     {
@@ -102,7 +151,7 @@ public class TicTacToe
     {
         TicTacToe game = new TicTacToe();
 	game.initializeField();
-	game.printField();
+	game.playRound();
 	return;
     }
 }

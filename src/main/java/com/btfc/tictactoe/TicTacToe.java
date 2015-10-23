@@ -61,8 +61,8 @@ public class TicTacToe
     public static void main(String[] args)
     {
         TicTacToe game = new TicTacToe();
-	game.initializeField();
-	game.printField();
-	return;
+		game.initializeField();
+		game.printField();
+		return;
     }
 }

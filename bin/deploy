@@ -1,5 +1,6 @@
 #!/bin/bash
-./gradlew installDist
-cp -r /home/gudmundurb/hugb_hello_world/build/install/hugb_hello_world   ./runTest
+gradle installDist
+cp -r ./ticTacToe/build/install/ticTacToe ./runTest
 export PORT=4575
-./runTest/hugb_hello_world/bin/hugb_hello_world
+./runTest/ticTacToe/bin/ticTacToe
+cp -r ./build/reports/tests/* /var/www/html/

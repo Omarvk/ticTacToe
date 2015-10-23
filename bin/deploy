@@ -1,0 +1,5 @@
+#!/bin/bash
+./gradlew installDist
+cp -r /home/gudmundurb/hugb_hello_world/build/install/hugb_hello_world   ./runTest
+export PORT=4575
+./runTest/hugb_hello_world/bin/hugb_hello_world

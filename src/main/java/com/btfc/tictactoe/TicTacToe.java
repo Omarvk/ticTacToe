@@ -35,19 +35,23 @@ public class TicTacToe
         return; 
     }
 
+    //Print the playing field to console
     public void printField()
     {
         for(int i = 0; i < XDIMENSION; i++)
 	{
 	    for(int j = 0; j < YDIMENSION; j++)
 	    {
-	        if(j != (YDIMENSION - 1))
+		System.out.printf("%c", field[i][j]); 
+		//don't print this when we are to the right of the table
+	        if(j != (YDIMENSION - 1)) 
 		{
-		    System.out.printf("%c|", field[i][j]); 
+		    System.out.printf("|");
 		}
 	    }
 	    System.out.println();
-	    if(i != (XDIMENSION - 1))
+	    //don't print this when we are below the table
+	    if(i != (XDIMENSION - 1)) 
 	    {
 		System.out.println("-----");
 	    }

@@ -1,0 +1,6 @@
+#!/bin/bash
+gradle installDist
+cp -r ./ticTacToe/build/install/ticTacToe ./runTest
+export PORT=4575
+./runTest/ticTacToe/bin/ticTacToe
+cp -r ./build/reports/tests/* /var/www/html/

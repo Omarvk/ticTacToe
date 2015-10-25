@@ -44,6 +44,7 @@ public class TicTacToe
         initializeField();
 	Point move;
 	int symbol = 0;
+	//make moves while the field is not full or either player won
 	for(int i = 0; i < XDIMENSION * YDIMENSION; i++)
 	{
 	    while(true){
@@ -96,7 +97,7 @@ public class TicTacToe
 	}
     }
 
-    //set the whole playing field to 0
+    //set the whole playing field to EMPTY 
     public void initializeField()
     {
         for(int i = 0; i < XDIMENSION; i++)
@@ -129,9 +130,6 @@ public class TicTacToe
 	    {
 	       return true; 
 	    }
-	}
-	for(int i = 0; i < XDIMENSION; i++)
-	{
 	    if(field[i][0] == field[i][1] && field[i][0] == field[i][2] && field[i][2] == field[i][1] && field[i][0] != EMPTY)
 	    {
 	       return true; 
@@ -149,7 +147,7 @@ public class TicTacToe
     {
         return YDIMENSION; 
     }
-    
+
     public int[][] getField()
     {
         return field; 

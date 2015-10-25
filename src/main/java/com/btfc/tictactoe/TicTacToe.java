@@ -186,6 +186,7 @@ public class TicTacToe
     {
         TicTacToe game = new TicTacToe();
 	game.initializeField();
+	game.playRound();
 	game.printField();
 	return;
     }

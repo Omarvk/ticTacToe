@@ -7,24 +7,26 @@ import org.junit.Test;
 
 public class Player
 {
-        String name;
-        int playerScore;
+        private String name;
+        private int playerScore;
 
         public void setName(String n)
         {
-                name = n;
+                this.name = n;
         }
-        public String getName(String n)
+       
+		public String getName()
         {
-                return n;
+                return this.name;
         }
 
-	public void setScore(int n)
+		public void setScore(int n)
         {
-                playerScore = n;
+                this.playerScore = n;
         }
-        public int Score(int n)
+        
+		public int getScore()
         {
-                return n;
+                return this.playerScore;
         }
 }

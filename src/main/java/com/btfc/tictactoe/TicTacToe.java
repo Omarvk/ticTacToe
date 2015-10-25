@@ -186,8 +186,7 @@ public class TicTacToe
     {
         TicTacToe game = new TicTacToe();
 	game.initializeField();
-	System.out.println("This is the latest version");
-	game.playRound();
+	game.printField();
 	return;
     }
 }

@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.awt.Point;
 
 import com.btfc.tictactoe.HumanPlayer;
+
 /*
 Creates a TicTacToe Game
 The playing field array is interperted like the following diagram
@@ -17,6 +18,7 @@ The playing field array is interperted like the following diagram
 0 | |
  0 1 2
 */
+
 public class TicTacToe
 {
     //constants
@@ -44,29 +46,53 @@ public class TicTacToe
 	int symbol = 0;
 	for(int i = 0; i < XDIMENSION * YDIMENSION; i++)
 	{
-            if(i % 2 == 0)
-	    {
-	        move = player1.makeMove(); 
-		symbol = X;
-	    }	
-            else
-	    {
-	        move = player2.makeMove(); 
-		symbol = O;
-	    }	
-	    field[move.x][move.y] = symbol;
+	    while(true){
+		this.printField();
+	        //let the players make their move
+		if(i % 2 == 0)
+		{
+		    move = player1.makeMove(); 
+		    symbol = X;
+		}	
+		else
+		{
+		    move = player2.makeMove(); 
+		    symbol = O;
+		}	
+		//check if the move is within the bounds of our array
+		if(move.x >= XDIMENSION || move.x < 0 || move.y >= YDIMENSION || move.y < 0 )
+		{
+		   System.out.println("Invalid move");
+		   continue;
+		}
+		//check if the chosen field is empty
+		else if(field[move.x][move.y] == EMPTY)
+		{
+		    field[move.x][move.y] = symbol;
+		    break;
+		}
+		else //if it's not, let the same player choose again
+		{
+		   System.out.println("Invalid move");
+	           continue;	
+		}
+	    }
 	    if(isGameWon())
 	    {
-	        if(symbol == X)
+		this.printField();
+		if(symbol == X)
 		{
-	            return;	
+		    //NOTE: this needs to be replaced with player specific stuff
+		    System.out.println("Player1 wins!");
+		    return;	
 		} 
 		else
 		{
-                    return;	
+		    //NOTE: this needs to be replaced with player specific stuff
+		    System.out.println("Player2 wins!");
+		    return;	
 		}
 	    }
-	    this.printField();
 	}
     }
 
@@ -123,24 +149,29 @@ public class TicTacToe
     {
         return YDIMENSION; 
     }
+    
+    public int[][] getField()
+    {
+        return field; 
+    }
 
     //Print the playing field to console
     public void printField()
     {
-        for(int i = 0; i < XDIMENSION; i++)
+        for(int i = YDIMENSION - 1; i >= 0; i--)
 	{
-	    for(int j = 0; j < YDIMENSION; j++)
+	    for(int j = 0; j < XDIMENSION; j++)
 	    {
-		System.out.printf("%c", field[i][j]); 
+		System.out.printf("%c", field[j][i]); 
 		//don't print this when we are to the right of the table
-	        if(j != (YDIMENSION - 1)) 
+	        if(j != XDIMENSION - 1) 
 		{
 		    System.out.printf("|");
 		}
 	    }
 	    System.out.println();
 	    //don't print this when we are below the table
-	    if(i != (XDIMENSION - 1)) 
+	    if(i != 0) 
 	    {
 		System.out.println("-----");
 	    }
@@ -151,6 +182,7 @@ public class TicTacToe
     {
         TicTacToe game = new TicTacToe();
 	game.initializeField();
+	System.out.println("This is the latest version");
 	game.playRound();
 	return;
     }

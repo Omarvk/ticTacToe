@@ -1,6 +1,7 @@
 #!/bin/bash
+#Creates a deployable build and deploys it to /tmp
 gradle installDist
-cp -r ./ticTacToe/build/install/ticTacToe ./runTest
+cp -r build/install/ticTacToe /tmp/runTest
 export PORT=4575
-./runTest/ticTacToe/bin/ticTacToe
+.//runTest/ticTacToe/bin/ticTacToe
 cp -r ./build/reports/tests/* /var/www/html/

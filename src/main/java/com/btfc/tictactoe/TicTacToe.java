@@ -140,12 +140,12 @@ public class TicTacToe
         return false;  
     }
 
-    public int getXDimesion()
+    public int getXDimension()
     {
         return XDIMENSION; 
     }
 
-    public int getYDimesion()
+    public int getYDimension()
     {
         return YDIMENSION; 
     }
@@ -153,6 +153,12 @@ public class TicTacToe
     public int[][] getField()
     {
         return field; 
+    }
+
+    public void setField(int[][] field)
+    {
+        this.field = field; 
+	return;
     }
 
     //Print the playing field to console

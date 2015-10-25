@@ -1,6 +1,6 @@
 package com.btfc.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -13,19 +13,54 @@ import java.io.PrintStream;
 public class TicTacToeTest {
 
     @Test
-    public void testInitializeField()
+    public void testInitializeField() throws Exception
     {
-        //Redirect output to a stream we can easily access
-	//Full credit to SO user Plant Thelda for this http://stackoverflow.com/questions/19322345/how-do-i-change-the-default-index-page-in-apache
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	System.setOut(new PrintStream(outContent));
-	//Initialize a empty game
         TicTacToe game = new TicTacToe();
-	game.initializeField(); 
-	game.printField();
-	//Assert that we have successfully created a empty playing field
-	assertEquals(" | | \n-----\n | | \n-----\n | | \n", outContent.toString());
-	//Clear the output, this is apparantly neccessary
-	System.setOut(null);
+	int[][] gameField = new int[game.getXDimension()][game.getYDimension()];
+	int[][] nonEmptyField = new int[game.getXDimension()][game.getYDimension()];
+	//NOTE: This is dirty but inserting the same filling algorithm here seems dum
+	int[][] emptyField = {{32, 32, 32}, {32, 32, 32}, {32, 32, 32}};
+	//insert a couple of random characters into random positions in the array
+	for(int i = 0; i < 10; i++)
+	{
+	    nonEmptyField[(int)(Math.random()*game.getXDimension())][(int)(Math.random()*game.getXDimension())] = (int)(Math.random() * 256);
+	}
+	//set the game field as the non-zero field, then zero it out and assert that it's actuall empty
+	game.setField(nonEmptyField);
+	game.initializeField();
+        gameField = game.getField();	
+	for(int i = 0; i < game.getYDimension(); i++)
+	{
+	    assertArrayEquals(emptyField[i], gameField[i]);
+	}
+    }
+
+    @Test
+    public void testIsGameWon()
+    {
+        final int X = 88;
+        final int Y = 79;
+	final int E = 32; //shorthand for empty 
+        TicTacToe game = new TicTacToe();
+	//create a bunch of scenarios
+	int[][] wonGame1 = {{X,X,X}, {E,E,E}, {E,E,E}};
+	int[][] wonGame2 = {{X,E,X}, {Y,X,Y}, {X,E,E}};
+	int[][] wonGame3 = {{X,X,X}, {E,X,E}, {Y,Y,Y}};
+	int[][] notWonGame1 = {{E,E,E}, {E,E,E}, {E,E,E}};
+	int[][] notWonGame2 = {{E,X,E}, {X,E,X}, {E,X,E}};
+	int[][] notWonGame3 = {{X,Y,X}, {X,Y,Y}, {Y,X,Y}};
+	//set the game field to our scenarios and ensure we are getting the right results
+	game.setField(wonGame1);
+	assertEquals(true, game.isGameWon());
+	game.setField(wonGame2);
+	assertEquals(true, game.isGameWon());
+	game.setField(wonGame2);
+	assertEquals(true, game.isGameWon());
+	game.setField(notWonGame1);
+	assertEquals(false, game.isGameWon());
+	game.setField(notWonGame3);
+	assertEquals(false, game.isGameWon());
+	game.setField(notWonGame3);
+	assertEquals(false, game.isGameWon());
     }
 }

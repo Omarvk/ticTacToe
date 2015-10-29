@@ -1,12 +1,21 @@
+# Java Class Files
 *.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-#*.jar
+*.jar
 *.war
 *.ear
 
+# Swap Files
+*.swp
+*.swap
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#folders we don't need to share
+build/
+bin/

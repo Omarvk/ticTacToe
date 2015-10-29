@@ -1,5 +1,5 @@
 # ticTacToe
-
+[![Build Status](https://travis-ci.org/BTFC/ticTacToe.png)](https://travis-ci.org/BTFC/ticTacToe)
 Descriptive text of the project needed
 
 ##Design Rules:

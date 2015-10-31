@@ -14,11 +14,21 @@ public class InterfaceTest
 	@Test
 	public void testPrintMenu()
 	{
-        	Interface i = new Interface();
-		i.printMenu();
-		assertEquals("Welcome to Tic Tac Toe\n----------------------\n1. For new game\n2. To exit game\n----------------------\n", outContent.toString());
+          Interface i = new Interface();
+	  i.printMenu();
+	  assertEquals("Welcome to Tic Tac Toe\n----------------------\n1. For new game\n2. To exit game\n----------------------\n", outContent.toString());
 
 	}
+
+	@Test
+	public void testInvalidMove()
+	{
+	  Interface i = new Interface();
+	  i.invalidMove();
+	  assertEquals("Invalid move", outContent.toString());
+	}
+
+
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();

@@ -16,7 +16,7 @@ public class InterfaceTest
 	{
         	Interface i = new Interface();
 		i.printMenu();
-		assertEquals("Hello World", outContent.toString());
+		assertEquals("Welcome to Tic Tac Toe\n----------------------\n1. For new game\n2. To exit game\n----------------------\n", outContent.toString());
 
 	}
 

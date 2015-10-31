@@ -11,6 +11,10 @@ public class Interface
      System.out.print("2. To exit game\n");
      System.out.print("----------------------\n");
     }
+    public void invalidMove()
+    {
+   	System.out.print("Invalid move");
+    }
 
 }
 

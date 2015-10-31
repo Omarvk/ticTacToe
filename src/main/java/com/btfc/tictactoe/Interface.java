@@ -5,7 +5,11 @@ public class Interface
 {
     public void  printMenu()
     {
-      System.out.print("Hello World");
+     System.out.print("Welcome to Tic Tac Toe\n");
+     System.out.print("----------------------\n");
+     System.out.print("1. For new game\n");
+     System.out.print("2. To exit game\n");
+     System.out.print("----------------------\n");
     }
 
 }

@@ -10,7 +10,7 @@ public class Player
         private String name;
         private int playerScore;
 		
-		public Player
+		public Player()
 		{
 			this.name = "Guest";
 			this.playerscore = 0;

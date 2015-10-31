@@ -1,7 +1,8 @@
-	
+package com.btfc.tictactoe;
 
-import spark.*:
-import static spark.Spark.*
+
+import spark.*;
+import static spark.Spark.*;
 import spark.servlet.SparkApplication;
 
 
@@ -10,21 +11,29 @@ public class Server implements SparkApplication {
    	@Override
 	public void init() 
 	{
-	Player playa = new Player();
-		post("/name", (req, res) ->{
-			Player.setName(
-				req.queryParams("fname") += " "+req.queryParams("lname")
-			);
+		// Steindór er MOTHAFOKKA THROW WAY
+		Player playa = new Player();
+		String nub = "steindor";
+		post("/fullname", (req, res) -> "test" );
+		post("/name", (req, res) -> {
+			res.status(200);
+			return res;
 		});
-		post("/fullname", (req, res) -> playa.getName());
-		res.status(200);
-		return res;
-		
+		/*post("", (req, res) -> {
+			res.status(200);
+			return res;
+		});*/
 	}
+	
+	/*post("/name", (req, res) ->{ 
+		playa.setName(
+			req.queryParams("n")
+		);
+    });*/
 	public static void main(String[] args) {
 		staticFileLocation("/public");
-		sparkApplication server = new Server();
+		SparkApplication server = new Server();
 		server.init();
-	}
+    }
 
 }

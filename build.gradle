@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "com.btfc.tictactoe.TicTacToe"
+mainClassName = "com.btfc.tictactoe.Server"
 
 // In this section you declare where to find the dependencies of your project
 repositories {

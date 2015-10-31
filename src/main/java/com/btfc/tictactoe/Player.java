@@ -13,7 +13,7 @@ public class Player
 		public Player()
 		{
 			this.name = "Guest";
-			this.playerscore = 0;
+			this.playerScore = 0;
 		}
 
         public void setName(String name)

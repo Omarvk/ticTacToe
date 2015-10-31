@@ -12,13 +12,13 @@ public class Player
 		
 		public Player
 		{
-			this.name = 'Guest';
+			this.name = "Guest";
 			this.playerscore = 0;
 		}
 
-        public void setName(String n)
+        public void setName(String name)
         {
-            this.name = n;
+            this.name = name;
         }
        
 		public String getName()
@@ -26,9 +26,9 @@ public class Player
 			return this.name;
         }
 
-		public void setScore(int n)
+		public void setScore(int score)
         {
-			this.playerScore = n;
+			this.playerScore = score;
         }
         
 		public int getScore()

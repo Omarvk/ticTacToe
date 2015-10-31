@@ -15,6 +15,11 @@ public class Interface
     {
    	System.out.print("Invalid move");
     }
+//This need to be refactored once we have player name implemented properly
+    public void playerWins(String pName)
+    {
+      System.out.print(pName + " wins!");
+    }
 
 }
 

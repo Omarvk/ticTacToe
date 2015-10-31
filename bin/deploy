@@ -3,5 +3,5 @@
 gradle installDist
 cp -r build/install/ticTacToe /tmp/runTest
 export PORT=4575
-.//runTest/ticTacToe/bin/ticTacToe
-cp -r ./build/reports/tests/* /var/www/html/
+/tmp/runTest/ticTacToe/bin/ticTacToe
+sudo cp -r ./build/reports/tests/* /var/www/html/

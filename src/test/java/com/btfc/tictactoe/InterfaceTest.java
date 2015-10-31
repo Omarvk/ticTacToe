@@ -28,7 +28,13 @@ public class InterfaceTest
 	  assertEquals("Invalid move", outContent.toString());
 	}
 
-
+	@Test
+	public void testPlayerWins()
+	{
+	  Interface i = new Interface();
+	  i.playerWins("Guest");
+	  assertEquals("Guest wins!", outContent.toString());
+	}
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();

@@ -1,19 +1,40 @@
-//This is a TDD class for Interface.java
-
+//This is a test TDD class for Interface.java
 package com.btfc.test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
-
+import org.junit.Before;
+import org.junit.After;
 import com.btfc.tictactoe.*;
 
 public class InterfaceTest
 { 	
 	@Test
-	public void testOutput()
+	public void testPrintMenu()
 	{
         	Interface i = new Interface();
-		assertEquals("Hello World", i.menu());
+		i.printMenu();
+		assertEquals("Hello World", outContent.toString());
+
 	}
+
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUpStreams() 
+	{
+    	  System.setOut(new PrintStream(outContent));
+          System.setErr(new PrintStream(errContent));
+	}
+	
+	@After
+	public void cleanUpStreams() 
+	{
+	    System.setOut(null);
+	    System.setErr(null);
+	}
+
 }

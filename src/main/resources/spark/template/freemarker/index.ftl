@@ -11,11 +11,11 @@
 		Lorem ipsum tralala magabelti.
 	</p>
 	<form action="/name" method="post" class="form-inline" role="form">
-		Name: <input type="text" name="name"><br>
+		Name: <input type="text" name="getName"><br>
 		<button type="submit" value="Submit">Submit</button>
 	</form>
 	<p>
-		<div id="name" class="alert alert-success"></div>
+		<div id="fullname" class="alert alert-success">${name}</div>
 	</p>
 	<script>
 	$(document).ready(function() {
@@ -24,7 +24,7 @@
 			$.ajax({
 				type: form.attr('method'),
 				url: form.attr('action'),
-				data: null
+				data: getName  
 			}).done(function(name) {
 				$('#name').html(name).attr('class', 'alert alert-success');
 			}).fail(function() {

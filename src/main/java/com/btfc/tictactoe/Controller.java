@@ -17,9 +17,9 @@ public class Controller {
 		//get("/",(req, res)  ->"Playername: " + player.getPlayer().getName());
 		get("/",(req, res) ->
 		{
-			attri.put("name", player.getPlayer().getName());
-			return modelAndView(attri, "index.ftl"); 
-		});
+			return new ModelAndView(null, "index.ftl"); 
+		}, new FreeMarkerEngine());
+
 		post("/name", (req, res) -> 
 		{
 			

@@ -2,6 +2,6 @@
 #Creates a deployable build and deploys it to /tmp
 gradle installDist
 cp -r build/install/ticTacToe /tmp/runTest
-export PORT=4575
+export PORT=4576
 .//runTest/ticTacToe/bin/ticTacToe
 cp -r ./build/reports/tests/* /var/www/html/

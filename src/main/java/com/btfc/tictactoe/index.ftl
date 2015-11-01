@@ -15,7 +15,7 @@
 		<button type="submit" value="Submit">Submit</button>
 	</form>
 	<p>
-		<div id="fullname" class="alert alert-success"></div>
+		<div id="fullname" class="alert alert-success">${name}</div>
 	</p>
 	<script>
 	$(document).ready(function() {

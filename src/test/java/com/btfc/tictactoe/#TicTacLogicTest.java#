@@ -17,7 +17,7 @@ public class TicTacLogicTest{
     @Test
     public void testFieldHasChangedWhenMoveIsMade(){
 	
-	ByteArrayInputStream in = new ByteArrayInputStream("1, 2\n".getBytes());
+	ByteArrayInputStream in = new ByteArrayInputStream("1, 2".getBytes());
 	System.setIn(in);
 
 	Board b = new Board();
@@ -28,6 +28,7 @@ public class TicTacLogicTest{
 	System.setIn(System.in);
 			
     }
+    
 
 
 

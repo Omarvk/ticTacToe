@@ -9,12 +9,13 @@ public class TicTacLogic{
     HumanPlayer player1;
     HumanPlayer player2;
     public Board board;
+    public TService tService;
     public TicTacLogic()
     {
 	board = new Board();
         player1 = new HumanPlayer();
         player2 = new HumanPlayer();
-	//Kallar líka á eintak af TService
+	tService = new TService();
     }
 
     public void printField(){
@@ -33,7 +34,8 @@ public class TicTacLogic{
         //make moves while the field is not full or either player won                                  
         for(int i = 0; i < board.XDIMENSION * board.YDIMENSION; i++)
 	{
-		while(true){
+		while(true)
+		{
 		    this.printField();
 		    //let the players make their move                                                      
 		    if(i % 2 == 0)
@@ -49,7 +51,7 @@ public class TicTacLogic{
 		    //check if the move is within the bounds of our array  
 		    if(move.x >= board.XDIMENSION || move.x < 0 || move.y >= board.YDIMENSION || move.y < 0 )
 		    {
-			System.out.println("Invalid move");
+			tService.invalidMove();
 			continue;
 		    }
 		    //check if the chosen field is empty                                                   
@@ -58,10 +60,10 @@ public class TicTacLogic{
 			board.setSymbol(move,symbol);
 			break;
 		    }
-
+		    
 		}
-	}
-    }
+        }
+   }
 
 
 }

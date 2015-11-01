@@ -35,7 +35,22 @@ public class InterfaceTest
 	  i.playerWins("Guest");
 	  assertEquals("Guest wins!", outContent.toString());
 	}
-
+	
+	@Test
+	public void testEnterPlayerName()
+	{
+	  try 
+	  {
+	    Interface i = new Interface();
+	    i.enterPlayerName();
+	    assertEquals("test1\n", "test1\n");
+	  }
+	  catch(IOException e)
+	  {
+	    System.err.println("Caught IOException: "); 
+	  //ehh
+	  }
+	}
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 

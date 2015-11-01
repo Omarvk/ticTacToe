@@ -1,6 +1,10 @@
 //This is the console interface class expected to be replaced later with web gui
 package com.btfc.tictactoe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Interface 
 {
     public void  printMenu()
@@ -11,6 +15,18 @@ public class Interface
      System.out.print("2. To exit game\n");
      System.out.print("----------------------\n");
     }
+
+    public String  enterPlayerName() throws IOException 
+    {
+    BufferedReader in = new BufferedReader(
+    	    new InputStreamReader(System.in));
+     
+     String newPName = in.readLine();
+     
+
+     return newPName;
+    }
+
     public void invalidMove()
     {
    	System.out.print("Invalid move");

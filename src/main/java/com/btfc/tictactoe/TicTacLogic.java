@@ -18,14 +18,28 @@ public class TicTacLogic{
 	tService = new TService();
     }
 
-    public void printField(){
-
-	
-
-
+    public void printField()
+    {//THIS IS ALL GOING TO CHANGE FoR new Interface.                                                                                  
+	for(int i = board.YDIMENSION - 1; i >= 0; i--)
+	{
+	    for(int j = 0; j < board.XDIMENSION; j++)
+	    {
+		System.out.printf("%c", board.getField()[j][i]);
+		//don't print this when we are to the right of the table                                            
+		if(j != board.XDIMENSION - 1)
+		{
+		    System.out.printf("|");
+		}
+	    }
+	    System.out.println();
+	    //don't print this when we are below the table                                                          
+	    if(i != 0)
+	    {
+		System.out.println("-----");
+	    }
+	}
     }
-    
-    
+
     public void playRound()
     {
         board.initializeField();
@@ -60,10 +74,63 @@ public class TicTacLogic{
 			board.setSymbol(move,symbol);
 			break;
 		    }
-		    
+		    else //if it's not, let the same player choose again                                   
+		    {
+			tService.invalidMove();
+			continue;
+		    }
 		}
+
+		if(isGameWon())
+		{
+		    this.printField();
+		    if(symbol == board.X)
+		    {
+			
+			tService.playerWins(this.player1.getName());
+			return;
+		    }
+		    else
+		   {
+		       
+		       tService.playerWins(this.player2.getName());
+		       return;
+	    	  }
+	        }
         }
+    }
+    public boolean isGameWon()
+   {
+       //check the diagonal lines                                                                     
+       if(board.getField()[0][0] == board.getField()[1][1] && board.getField()[1][1] == board.getField()[2][2] && board.getField()[0][0] == board.getField()[2][2] && board.getField()[0][0] != board.EMPTY)
+       {
+	   return true;
+       }
+       if(board.getField()[0][2] == board.getField()[1][1] && board.getField()[1][1] == board.getField()[2][0] && board.getField()[0][2] == board.getField()[2][0] && board.getField()[1][1] != board.EMPTY)
+       {
+	   return true;
+       }
+       //check the horizontal and vertical lines                                                      
+       for(int i = 0; i < board.XDIMENSION; i++)
+       {
+	   if(board.getField()[0][i] == board.getField()[1][i] && board.getField()[0][i] == board.getField()[2][i] && board.getField()[2][i] == board.getField()[1][i]  && board.getField()[0][i] != board.EMPTY)
+	   {
+	       return true;
+	   }
+	   if(board.getField()[i][0] == board.getField()[i][1] && board.getField()[i][0] == board.getField()[i][2] && board.getField()[i][2] == board.getField()[i][1]  && board.getField()[i][0] != board.EMPTY)
+	   {
+	       return true;
+	   }
+       }
+       return false;
    }
 
-
+    public static void main(String[] args)
+    {
+	TicTacToe game = new TicTacToe();
+	game.initializeField();
+	game.playRound();
+	game.printField();
+	return;
+    }
 }

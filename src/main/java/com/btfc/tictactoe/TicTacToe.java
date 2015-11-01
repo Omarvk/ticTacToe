@@ -181,13 +181,13 @@ public class TicTacToe
 	    }
 	}
     }
-
+    
     public static void main(String[] args)
     {
-        TicTacToe game = new TicTacToe();
-	game.initializeField();
+        TicTacLogic game = new TicTacLogic();
 	game.playRound();
 	game.printField();
 	return;
     }
+    
 }

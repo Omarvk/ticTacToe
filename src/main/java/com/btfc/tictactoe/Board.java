@@ -1,4 +1,5 @@
 package com.btfc.tictactoe;
+import java.awt.Point;
 
 public class Board{
 
@@ -46,7 +47,10 @@ public class Board{
         this.field = field;
         return;
     }
-
+    public void setSymbol(Point move, int symbol){
+	
+	this.field[move.x][move.y] = symbol;
+    }
     
     
 

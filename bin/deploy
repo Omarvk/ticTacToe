@@ -7,7 +7,12 @@ gradle installDist
 #Creates a deployable build and deploys it to /tmp
 cp -r build/install/ticTacToe /tmp/runTest
 export PORT=4576
+<<<<<<< HEAD
 #Deploy the test results to our apache server
 cp -r build/reports/tests/* /var/www/html/
 #Deploy our docunetation
 cp build/gen-html/* /var/www/html/
+=======
+.//runTest/ticTacToe/bin/ticTacToe
+cp -r ./build/reports/tests/* /var/www/html/
+>>>>>>> OMARIO

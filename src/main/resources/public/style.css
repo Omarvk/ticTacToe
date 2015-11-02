@@ -1,0 +1,17 @@
+td
+{
+	text-align: center;
+}
+
+#board
+{
+	width: 750px;
+	background: #F5F5F5;
+	margin: 15px;
+}
+
+#board img
+{
+	height: 100px;
+	width: 200px;
+}

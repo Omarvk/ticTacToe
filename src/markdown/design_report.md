@@ -2,6 +2,11 @@
 
 This report contains the intended structure of the Bonnie Tyler Fan Club's web-based TicTacToe implementation. The goal of this report is to give a good idea of the system will look and aid in it's implementation.
 
+##Prototype
+This is a simple drawing of our intended graphical interface. We ended up using the same graphical assets for the actual interface so it is eerily cloese to the actual result.
+
+![Prototype](prot.png)
+
 ##Coding rules
 
 ###General

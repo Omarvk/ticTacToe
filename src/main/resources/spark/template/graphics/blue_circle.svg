@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="blue_circle.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="164.7283"
+     inkscape:cy="120.65842"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="711"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36218)">
+    <path
+       style="fill:#000080;fill-opacity:1;stroke:#0000ff;stroke-width:1.46955514;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
+       d="m 50,953.09375 c -27.208431,0 -49.25,22.07282 -49.25,49.28125 0,27.2084 22.041569,49.25 49.25,49.25 27.208431,0 49.25,-22.0416 49.25,-49.25 l 0,-0.5 C 98.983222,974.85766 77.018656,953.09375 50,953.09375 z m 0,10.5625 c 21.233119,0 38.509097,17.08042 38.71875,38.31255 l 0,0.4062 c 0,21.3823 -17.336493,38.7188 -38.71875,38.7188 -21.382257,0 -38.71875,-17.3365 -38.71875,-38.7188 0,-21.38226 17.336493,-38.71875 38.71875,-38.71875 z"
+       id="path3207"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

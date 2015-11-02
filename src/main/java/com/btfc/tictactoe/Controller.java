@@ -9,7 +9,7 @@ import java.awt.Point;
 
 public class Controller {
 	private static Map<String, Object> attri = new HashMap<>();
-	public Controller(final TicTacToeService tic, Board board) {
+	public Controller(final TicTacToeService tic) {
 	    //post("/", (req, res) ->{
 		//	return "Playername: "+ player.setPlayer(req.queryParams("getName")).getName(); 
 		//});
@@ -19,7 +19,7 @@ public class Controller {
 			int size = 3;
 			for(int x = 0; x < size; x++){
 				for(int y = 0; y < size; y++){
-					int tala = tic.getBoard(board).getField()[x][y];				
+					int tala = tic.getBoard().getField()[x][y];				
 					String value  = String.valueOf(tala);
 					String cell = "a" + String.valueOf(x) + String.valueOf(y);
 					attri.put(cell, value);
@@ -39,7 +39,7 @@ public class Controller {
 			int x = Integer.parseInt(px);
 			int y = Integer.parseInt(py);
 			Point point = new Point(x, y);
-			tic.setBoard(board, point);
+			tic.setBoard(point);
 			//res.redirect("/");
 			return null;
 		});
@@ -60,7 +60,6 @@ public class Controller {
 	}
 	public static void main(String[] args) {
 		staticFileLocation("/public");
-	    Board board = new Board();
-		new Controller(new TicTacToeService(), board);					
+		new Controller(new TicTacToeService());					
 	}	
 }

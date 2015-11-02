@@ -4,10 +4,11 @@ import java.awt.Point;
 
 public class TicTacToeService {
 
-	public Board getBoard (Board board){
+	Board board = new Board();
+	public Board getBoard (){
 		return board;
 	}
-	public Board setBoard(Board board, Point move){
+	public Board setBoard(Point move){
 		board.setSymbol(move, 1);
 		return board;
 	}

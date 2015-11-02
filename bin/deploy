@@ -1,6 +1,6 @@
 #!/bin/bash
 #Execute our tasks
-./bin/deploy_markdown
+gradle markdownToHtml
 gradle installDist
 #Creates a deployable build and deploys it to /tmp
 cp -r build/install/ticTacToe /tmp/runTest

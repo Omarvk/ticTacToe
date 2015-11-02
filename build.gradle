@@ -11,7 +11,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "com.btfc.tictactoe.Controller"
+
+
+mainClassName = "com.btfc.tictactoe.TicTacToe"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -53,3 +55,8 @@ buildscript {
 }
 
 apply plugin: 'org.kordamp.markdown.convert'
+
+
+apply plugin: 'checkstyle'
+tasks.withType(Checkstyle) {ignoreFailures = true }
+

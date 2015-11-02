@@ -2,9 +2,13 @@
 This document details how to get BTFC's TicTacToe
 
 ##Required software
+* Ubuntu/Debian GNU/Linux opreating system
 * Git 2.14 or later
 * Java 8, other verisons will not work
 * Gradle 2.8
+
+###Optional
+* Apache Server, this project will try to deploy build information and Documentation to a local apache server. This is highly reccommended.
 
 ##Build instructions
 1. Clone the git repository

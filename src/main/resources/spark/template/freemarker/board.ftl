@@ -10,54 +10,84 @@
 	<body>
 	<p>
 		Lorem ipsum tralala magabelti.
-	</p>
+</p>
 	<div id="board">
 		<table id="tictactoetable" class="table table-responsive table-bordered">
 			<tr>
 				<td id="td00">
-					<img src="../graphics/empty.svg" id="i00" alt="Cell 0.0" />
+					<div id="d00">${a00}</div>
 				</td>
 				<td id="td01">
-					<img src="../graphics/empty.svg" id="i01" alt="Cell 0.1" />
+					<div id="d01">${a01}</div>
+				</td>
 				</td>
 				<td id="td02">
-					<img src="../graphics/empty.svg" id="i02" alt="Cell 0.2" />
+					<div id="d02">${a02}</div>
 				</td>
 			</tr>
 			<tr>
 				<td id="td10">
-					<img src="../graphics/empty.svg" id="i10" alt="Cell 1.0" />
+					<div id="d10">${a10}</div>
 				</td>
 				<td id="td11">
-					<img src="../graphics/empty.svg" id="i11" alt="Cell 1.1" />
+					<div id="d11">${a11}</div>
 				</td>
 				<td id="td12">
-					<img src="../graphics/empty.svg" id="i12" alt="Cell 1.2" />
+					<div id="d12">${a12}</div>
 				</td>
 			</tr>
 			<tr>
 				<td id="td20">
-					<img src="../graphics/empty.svg" id="i20" alt="Cell 2.0" />
+				 	<div id="d20">${a20}</div>
 				</td>
 				<td id="td21">
-					<img src="../graphics/empty.svg" id="i21" alt="Cell 2.1" />
+					 <div id="d21">${a21}</div>
 				</td>
-				<td id="td22">
-					<img src="../graphics/empty.svg" id="i22" alt="Cell 2.2" />
+				<td id="td22">	
+					 <div id="d22">${a22}</div>
 				</td>
 			</tr>
 		</table>
 	</div>
 	<script>
-			$('img').click(function(){
-					  //var col = $(this).parent().children().index($(this));
-					  		  //var row = $(this).parent().parent().children().index($(this).parent());
-							  					
-				$(this).attr("src", "../graphics/red_x.svg");
-														  //$(this).attr("src", "../graphics/blue_circle.svg");
+			$(document).ready(function() {
+				for(var x = 0; x < 3; x++){
+					for(var y = 0; y < 3; y++)
+					{
+						var check = $('#d'+x+''+y).html();
+						if(check == 1){
+							$('#d'+x+''+y).html('<img src="../graphics/red_x.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');										}		
+					      else if(check == 2){
+						}	
+						else{
+				    	    $('#d'+x+''+y).html('<img src="../graphics/empty.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');
+						}
+					}
+				}
+				/*var check = $('#d0').html();
+				if(check == 32){
+					$('#d0').html('<img src="../graphics/empty.svg" id="i00" alt="Cell 0.0" />');
+				}
+				if(check == 1){
+					$('#d0').html('<img src="../graphics/red_x.svg" id="i00" alt="Cell 0.0" />');
+                } */			
+				$('img').click(function(event){
+			   		//var col = $(this).parent().children().index($(this));
+			   		//var row = $(this).parent().parent().children().index($(this).parent());
+			   		$.post("/move", {cell: event.target.id } );
+					window.location.reload();
+                    
+							
+					//location.reload();
+					//$(location).attr('href',"/");
+			   		//$(this).attr("src", "../graphics/red_x.svg");
+					//$(this).attr("src", "../graphics/blue_circle.svg");
+				});
 			});
+			
 	</script>
 	</body>
 </html>
+
 
 

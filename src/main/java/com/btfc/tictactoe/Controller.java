@@ -5,13 +5,11 @@ import java.util.*;
 import spark.*;
 import spark.ModelAndView;
 import static spark.Spark.*;
-import static com.btfc.tictactoe.JsonUtil.*;
 import java.awt.Point;
 
 public class Controller {
 	private static Map<String, Object> attri = new HashMap<>();
-	Board board = new Board();
-	public Controller(final TicTacToeService tic) {
+	public Controller(final TicTacToeService tic, Board board) {
 	    //post("/", (req, res) ->{
 		//	return "Playername: "+ player.setPlayer(req.queryParams("getName")).getName(); 
 		//});
@@ -21,7 +19,11 @@ public class Controller {
 			int size = 3;
 			for(int x = 0; x < size; x++){
 				for(int y = 0; y < size; y++){
-					attri.put(String.valueOf(x) + String.valueOf(y), tic.getBoard(board).getField()[x][y]);
+					int tala = tic.getBoard(board).getField()[x][y];				
+					String value  = String.valueOf(tala);
+					String cell = "a" + String.valueOf(x) + String.valueOf(y);
+					attri.put(cell, value);
+					System.out.println(cell+ " wat " +value );
 				}
 			}
 			//attri.put("name", player.getPlayer().getName());
@@ -30,13 +32,17 @@ public class Controller {
 
 		post("/move", (req, res) -> 
 		{
-			int x = Integer.parseInt(req.queryParams("col"));
-			int y = Integer.parseInt(req.queryParams("row"));
+			String cell = req.queryParams("cell");
+			String px = Character.toString(cell.charAt(1));
+			String py = Character.toString(cell.charAt(2));
+			System.out.println(" Noob "+cell+" "+px+" "+py);
+			int x = Integer.parseInt(px);
+			int y = Integer.parseInt(py);
 			Point point = new Point(x, y);
-			attri.put(req.queryParams("col") + req.queryParams("row"), tic.setBoard(board, point));
-			res.redirect("/");
+			tic.setBoard(board, point);
+			//res.redirect("/");
 			return null;
-		}, new FreeMarkerEngine());
+		});
 		/*post("/name",new Route(){ 
 		////	req.queryParams("name")
 			@Override
@@ -54,6 +60,7 @@ public class Controller {
 	}
 	public static void main(String[] args) {
 		staticFileLocation("/public");
-		new Controller(new TicTacToeService());					
+	    Board board = new Board();
+		new Controller(new TicTacToeService(), board);					
 	}	
 }

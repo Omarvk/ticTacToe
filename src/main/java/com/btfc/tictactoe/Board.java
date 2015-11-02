@@ -1,7 +1,8 @@
 package com.btfc.tictactoe;
 import java.awt.Point;
 
-public class Board{
+public class Board
+{
 
     static final int XDIMENSION = 3;
     static final int YDIMENSION = 3;
@@ -11,9 +12,9 @@ public class Board{
 
     private int[][] field = new int[XDIMENSION][YDIMENSION];
 
-    public Board(){
-
-	initializeField();
+    public Board()
+	{
+		initializeField();
     }
     public void initializeField()
     {
@@ -47,9 +48,9 @@ public class Board{
         this.field = field;
         return;
     }
-    public void setSymbol(Point move, int symbol){
-	
-	this.field[move.x][move.y] = symbol;
+    public void setSymbol(Point move, int symbol)
+	{
+		this.field[move.x][move.y] = symbol;
     }
     
     

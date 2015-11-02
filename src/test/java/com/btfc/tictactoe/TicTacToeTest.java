@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 public class TicTacToeTest {
 
-    @Test
+    /**    @Test
     public void testInitializeField() throws Exception
     {
         TicTacToe game = new TicTacToe();
@@ -34,7 +34,7 @@ public class TicTacToeTest {
 	    assertArrayEquals(emptyField[i], gameField[i]);
 	}
     }
-
+    **/
     @Test
     public void testIsGameWon()
     {

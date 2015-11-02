@@ -1,12 +1,12 @@
 #!/bin/bash
+#This file needs to be in our root directory for git, so we make a copy so we don't have to fill our root directory with markdown
+cp README.md src/markdown
 #Execute our tasks
 gradle markdownToHtml
 gradle installDist
 #Creates a deployable build and deploys it to /tmp
 cp -r build/install/ticTacToe /tmp/runTest
 export PORT=4576
-#This file needs to be in our root directory for git, so we make a copy so we don't have to fill our root directory with markdown
-cp README.md src/markdown
 #Deploy the test results to our apache server
 cp -r build/reports/tests/* /var/www/html/
 #Deploy our docunetation

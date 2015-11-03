@@ -18,15 +18,15 @@ public class Board
     public void initializeField()
     {
         for(int i = 0; i < XDIMENSION; i++)
-	{
-	    for(int j = 0; j < YDIMENSION; j++)
-	    {
-                field[i][j] = EMPTY;
-	    }
-	}
+    {
+        for(int j = 0; j < YDIMENSION; j++)
+        {
+            field[i][j] = EMPTY;
+        }
+    }
         return;
     }
-    
+
     public int getXDimension()
     {
         return XDIMENSION;
@@ -57,6 +57,4 @@ public class Board
     {
         return this.field[x][y];
     }
-    
-
 }

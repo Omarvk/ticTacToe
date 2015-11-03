@@ -35,8 +35,17 @@ public class TicTacLogic{
     {
         return Integer.toString(player2.getScore()); 
     }
-
-
+    
+	public String getPlayer1Name()
+	{
+		return player1.getName();
+	}
+ 	
+	public String getPlayer2Name()
+	{
+		return player2.getName();
+	}
+   
     //returns the result of the action as a string
     //returns a empty string upon success
     public String makeMove(int x, int y)
@@ -88,8 +97,8 @@ public class TicTacLogic{
     {
         board.initializeField();
 	isGameOver = false;
-	player1.setName("Player1");
-	player2.setName("Player2");
+	player1.setName("Player 1");
+	player2.setName("Player 2");
 	player1.setSymbol(1);
 	player2.setSymbol(2);
 	counter = 0;

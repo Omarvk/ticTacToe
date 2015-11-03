@@ -37,7 +37,8 @@ public class Controller {
 					String cell = "a" + String.valueOf(x) + String.valueOf(y);
 					attri.put(cell, value);
 					attri.put("Message", results);
-				    
+				    attri.put("P1N" , tic.getPlayer1Name());
+					attri.put("P2N" , tic.getPlayer2Name());
 					attri.put("P1", tic.getPlayer1Score());
 					attri.put("P2", tic.getPlayer2Score());
 				}

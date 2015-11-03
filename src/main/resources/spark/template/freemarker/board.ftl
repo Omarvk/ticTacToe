@@ -53,10 +53,10 @@
 				Score:
 			</p>
 			<p>
-				Player 1: ${P1} 
+				${P1N}: ${P1} 
 			</p>
 			<p>
-				Player 2: ${P2}
+				${P2N}: ${P2}
 			</p>
 			<p>
 				<button type="button" id="newGame" class="btn btn-default">New Game</button>

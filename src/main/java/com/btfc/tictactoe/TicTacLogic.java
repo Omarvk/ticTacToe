@@ -80,6 +80,7 @@ public class TicTacLogic{
 	player2.setName("Player2");
 	player1.setSymbol(1);
 	player2.setSymbol(2);
+	counter = 0;
     }
 
     public boolean isGameWon()

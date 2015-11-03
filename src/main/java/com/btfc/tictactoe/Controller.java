@@ -11,41 +11,41 @@ public class Controller
     private String results = "Start Game!";
     public Controller(final TicTacLogic tic)
     {
-        get("/",(req, res) ->	
-        {
-            // size of the board
-            int size = 3;
-            // loop the board
-            for(int x = 0; x < size; x++)
+        get("/",(req, res) ->
             {
-                for(int y = 0; y < size; y++)
+                // size of the board
+                int size = 3;
+                // loop the board
+                for(int x = 0; x < size; x++)
                 {
-                    // get value of cell
-                    int tala = tic.getSymbol(x, y);
-                    String value = "";
-                    // change values into mark
-                    if( tala == 1)
+                    for(int y = 0; y < size; y++)
                     {
-                        value = "<img src=\"../graphics/red_x.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+                        // get value of cell
+                        int tala = tic.getSymbol(x, y);
+                        String value = "";
+                        // change values into mark
+                        if( tala == 1)
+                        {
+                            value = "<img src=\"../graphics/red_x.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+                        }
+                        else if( tala == 2)
+                        {
+                            value = "<img src=\"../graphics/blue_circle.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+                        }
+                        else
+                        {
+                            value = "<img src=\"../graphics/empty.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+                        }
+                        // put strings into hashmap for modelview, results, name and scores.
+                        String cell = "a" + String.valueOf(x) + String.valueOf(y);
+                        attri.put(cell, value);
+                        attri.put("Message", results);
+                        attri.put("P1N" , tic.getPlayer1Name());
+                        attri.put("P2N" , tic.getPlayer2Name());
+                        attri.put("P1", tic.getPlayer1Score());
+                        attri.put("P2", tic.getPlayer2Score());
                     }
-                    else if( tala == 2)
-                    {
-                        value = "<img src=\"../graphics/blue_circle.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
-                    }
-                    else
-                    {
-                        value = "<img src=\"../graphics/empty.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
-                    }
-                    // put strings into hashmap for modelview, results, name and scores.
-                    String cell = "a" + String.valueOf(x) + String.valueOf(y);
-                    attri.put(cell, value);
-                    attri.put("Message", results);
-                    attri.put("P1N" , tic.getPlayer1Name());
-                    attri.put("P2N" , tic.getPlayer2Name());
-                    attri.put("P1", tic.getPlayer1Score());
-                    attri.put("P2", tic.getPlayer2Score());
                 }
-            }
             return new ModelAndView(attri, "board.ftl"); 
             }, new FreeMarkerEngine());
 

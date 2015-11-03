@@ -48,13 +48,13 @@
 			</table>
 		</div>
 		<div id="scorearea">
-			<p id="score">
+			<p id="score" class="score1">
 				${Message}
 			</p>
-			<p id="score">
+			<p id="score" class="score2">
 				${P1N}: ${P1} 
 			</p>
-			<p id="score">
+			<p id="scorea" class="score3">
 				${P2N}: ${P2}
 			</p>
 			<p>

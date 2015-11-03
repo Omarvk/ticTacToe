@@ -31,6 +31,32 @@ public class TicTacLogicTest{
     }
     **/
     @Test
+    public void testFieldHasChangedWhenMoveIsMade()
+    {
+	TicTacLogic game = new TicTacLogic();
+	TicTacLogic game2 = new TicTacLogic();
+	
+	//Put points in
+	game.makeMove(0,0); 
+	assertFalse(Arrays.deepEquals(game2.board.getField(), game.board.getField()));    
+    }
+     @Test
+     public void testFieldHasNotChangedWhenMoveIsMadeOnTheSameCoordinates()
+    {
+        TicTacLogic game = new TicTacLogic();
+	TicTacLogic game2 = new TicTacLogic();
+
+        //Put same points in twice 
+	game2.makeMove(1,1);
+
+        game.makeMove(1,1);
+	game.makeMove(1,1);
+	//System.println(game.board.getField();
+	//Test that field has not changed.
+        assertTrue(Arrays.deepEquals(game2.board.getField(), game.board.getField()));
+    }
+
+    @Test
     public void testIsGameWonHorizontalFirstLine()
     {
 	final int X = 88;

@@ -36,31 +36,31 @@ public class TicTacLogic{
         return Integer.toString(player2.getScore()); 
     }
     
-	public String getPlayer1Name()
-	{
-		return player1.getName();
-	}
+    public String getPlayer1Name()
+    {
+	return player1.getName();
+    }
  	
-	public String getPlayer2Name()
-	{
-		return player2.getName();
-	}
+    public String getPlayer2Name()
+    {
+	return player2.getName();
+    }
 	
-	public String getPlayerTurn()
+    public String getPlayerTurn()
+    {
+	if(!isGameOver)
 	{
-		if(!isGameOver)
-		{
-		    if(counter % 2 == 0)
-	        {
-	            return "Player 1 turn";
-	        }
-	        else
-	        {
-	            return "Player 2 turn";
-	        }
-		}
-		return "";
+	    if(counter % 2 == 0)
+	    {
+		return player1.getName() + " turn";
+	    }
+	    else
+	    {
+		return player2.getName() + " turn";
+	    }
 	}
+	return "";
+    }
     //returns the result of the action as a string
     //returns a empty string upon success
     public String makeMove(int x, int y)

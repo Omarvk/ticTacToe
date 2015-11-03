@@ -87,14 +87,22 @@
 				$('img').click(function(event)
 				{
 			   		$.post("/move", {cell: event.target.id } );
-					window.location.reload();
+					setTimeout(
+					    function(){ 
+					        window.location.reload();
+					    },1 
+					);
 					//location.reload();
 					//$(location).attr('href',"/");
 				});
 				$('#newGame').click(function()
 				{
 					$.post("/newGame", {});
-					window.location.reload();
+					setTimeout(
+					    function(){ 
+					        window.location.reload();
+					    },1
+					);
 				});
 
 			});

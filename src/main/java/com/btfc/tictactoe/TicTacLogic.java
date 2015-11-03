@@ -21,6 +21,11 @@ public class TicTacLogic{
 	newGame();
     }
 
+    public boolean getIsGameOver()
+    {
+        return isGameOver;
+    }
+
     public int getSymbol(int x, int y)
     {
         return board.getSymbol(x, y); 

@@ -17,14 +17,14 @@ A very simple web-based implementation of the classic board game TicTacToe.
 
 ##Authors
 
-Gudmundur Ellert Bjornsson
+[[Gudmundur Ellert Bjornsson](mailto:gummisexy@hotmail.com)](mailto:gummisexy@hotmail.com)
 
-Laura Orsini Franca
+[[Laura Orsini Franca](mailto:LauraBaba95@yahoo.com)](mailto:LauraBaba95@yahoo.com)
 
-Omar Karl Valgardsson
+[[Omar Karl Valgardsson](mailto:ommicool95@druzlur.is)](mailto:ommicool95@druzlur.is)
 
-Snaevar Geir Geirsson
+[[Snaevar Geir Geirsson](mailto:mcsnaevarloverboy@hotmail.com)](mailto:mcsnaevarloverboy@hotmail.com)
 
-Sigurdur Baldursson
+[[Sigurdur Baldursson](mailto:siggisaeti@einkamal.is)](mailto:siggisaeti@einkamal.is)
 
-Steindor Bragason
+[[Steindor Bragason](mailto:bragason@gmail.com)](mailto:bragason@gmail.com)

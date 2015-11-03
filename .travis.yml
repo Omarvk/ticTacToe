@@ -5,3 +5,8 @@ jdk:
 branches:
   only:
     - master
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "2debc829-14f9-4078-b71d-386ccd1062a6"

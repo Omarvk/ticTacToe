@@ -10,6 +10,7 @@ public class TicTacLogic{
     HumanPlayer player2;
     public Board board;
     int counter;
+    boolean isGameOver;
 
     public TicTacLogic()
     {
@@ -17,6 +18,7 @@ public class TicTacLogic{
         player1 = new HumanPlayer();
         player2 = new HumanPlayer();
 	counter = 0;
+	newGame();
     }
 
     public int getSymbol(int x, int y)
@@ -29,6 +31,11 @@ public class TicTacLogic{
     public String makeMove(int x, int y)
     {
         int symbol;
+	//Take no action if the game is over
+	if(isGameOver)
+	{
+	    return "Game is over";
+	}
         //Check which players turn it is
         if(counter % 2 == 0)
 	{
@@ -46,11 +53,13 @@ public class TicTacLogic{
 	    //check if someone has won the game
 	    if(isGameWon())
 	    {
+	        isGameOver = true;
 	        return "winner!";
 	    }
 	    //check if the game is drawn
 	    if(counter == 9)
 	    {
+	        isGameOver = true;
 	        return "draw"; 
 	    }
 	    return "";
@@ -61,6 +70,12 @@ public class TicTacLogic{
 	    counter--;
             return "Invalid move";	
 	}
+    }
+    
+    public void newGame()
+    {
+        board.initializeField();
+	isGameOver = false;
     }
 
     /*

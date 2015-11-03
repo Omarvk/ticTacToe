@@ -6,6 +6,7 @@ This document details how to get BTFC's TicTacToe
 * Git 2.14 or later
 * Java 8, other verisons will not work
 * Gradle 2.8
+* A web browser (Mozilla's Firefox is particularly recommended)
 
 ###Optional
 * Apache Server, this project will try to deploy build information and Documentation to a local apache server. This is highly reccommended.

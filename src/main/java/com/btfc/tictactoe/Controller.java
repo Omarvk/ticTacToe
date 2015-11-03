@@ -46,10 +46,10 @@ public class Controller
                         attri.put("P2", tic.getPlayer2Score());
                     }
                 }
-            return new ModelAndView(attri, "board.ftl"); 
+                return new ModelAndView(attri, "board.ftl"); 
             }, new FreeMarkerEngine());
 
-            post("/move", (req, res) -> 
+        post("/move", (req, res) -> 
             {
                 //get the val labelled cell from javascript
                 String cell = req.queryParams("cell");
@@ -68,16 +68,16 @@ public class Controller
                 }
                 return null;
             });
-            post("/newGame", (req, res) ->
+        post("/newGame", (req, res) ->
             {
                 tic.newGame();
                 results = "New Game!";
                 return null;
             });
-        }
-        public static void main(String[] args) 
-        {
-            staticFileLocation("/public");
-            new Controller(new TicTacLogic());					
-        }
+    }
+    public static void main(String[] args) 
+    {
+        staticFileLocation("/public");
+        new Controller(new TicTacLogic());					
+    }
 }

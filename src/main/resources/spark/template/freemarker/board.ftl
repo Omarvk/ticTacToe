@@ -59,7 +59,7 @@
 				Player 2: 
 			</p>
 			<p>
-				<button type="button" class="btn btn-default">New Game</button>
+				<button type="button" id="newGame" class="btn btn-default">New Game</button>
 			</p>
 		</div>
 	</div>
@@ -85,11 +85,17 @@
 						}
 					}
 				}*/ 
-				$('img').click(function(event){
+				$('img').click(function(event)
+				{
 			   		$.post("/move", {cell: event.target.id } );
 					window.location.reload();
 					//location.reload();
 					//$(location).attr('href',"/");
+				});
+				$('#newGame').click(function()
+				{
+					$.post("/newGame", {});
+					window.location.reload();
 				});
 
 			});

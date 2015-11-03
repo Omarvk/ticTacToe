@@ -6,7 +6,6 @@ td
 #board
 {
 	width: 750px;
-	background: #F5F5F5;
 	float: left;
 	display: inline-block;
 }
@@ -17,6 +16,11 @@ td
 	width: 200px;
 }
 
+#tictactoetable
+{
+	background-color: #F5F5F5;
+}
+
 #scorearea
 {
 	float: right;
@@ -25,11 +29,12 @@ td
 
 #playarea
 {
-	width: 1000px;
+	width: 950px;
 	margin: 35px;
 }
 
 #score
 {
 	font-weight: bold;
+}
 }

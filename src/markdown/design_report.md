@@ -1,8 +1,6 @@
 #Design Report
 
-This report contains the intended structure of the Bonnie Tyler Fan Club's web-based TicTacToe implementation. The goal of this report is to provide a brief introduction of its purpose and functionalities as well as establish some of the structural rules the code present here will go by. Our TicTacToe application will have a web-based interaction where pair of human players will be able to compete with each other and keep score of their matches. Human and AI matches will also be a possibility. To keep such scores, the implementation of a database was necessary.
-  
-##Currently, this version does not support an AI-controlled player. ALSO CHECK THE SQL STUFF AND IF THE AI PLAYER WAS INDEED ADDED
+This report contains the intended structure of the Bonnie Tyler Fan Club's web-based TicTacToe implementation. The goal of this report is to provide a brief introduction of its purpose and functionalities as well as establish some of the structural rules the code present here will go by. Our TicTacToe application will have a web-based interaction where pair of human players will be able to compete with each other and see the score of their current match. Human versus AI matches will also be a possibility in later versions. To indefinitenly keep such scores, the implementation of a database will be necessary in the future.  
 
 ##Prototype
 This is a schematic of our intended graphical interface. Since a TicTacToe requires very simple graphical design, the same graphical assets shown here will also serve as the actual working  interface for the software. Something shinier is in the horizon for later versions, hopefully.
@@ -131,6 +129,7 @@ This is a schematic of our intended graphical interface. Since a TicTacToe requi
     }  
 
 ###PostgresSQL
+(in future versions)  
 * The unit of indentation is four spaces. Such should be used in multi-lined queries.
 * Comments should be done judiciously, well written and clear.
 * Blank spaces should be used to improve readability.

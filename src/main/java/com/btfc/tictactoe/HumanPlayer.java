@@ -1,48 +1,45 @@
 package com.btfc.tictactoe;
-
-import java.awt.Point;
-
 import com.btfc.tictactoe.Player;
 
 public class HumanPlayer implements Player
 {
-        private String name;
-        private int playerScore;
-	private int playerSymbol;
-		
-        public void Player()
-	{
-	    this.name = "Guest";
-	    this.playerScore = 0;
-	}
+    private String name;
+    private int playerScore;
+    private int playerSymbol;
 
-        public void setName(String name)
-        {
-            this.name = name;
-        }
-       
-	public String getName()
-        {
-	    return this.name;
-        }
+    public void Player()
+    {
+        this.name = "Guest";
+        this.playerScore = 0;
+    }
 
-        public void setSymbol(int n)
-	{
-            playerSymbol = n;	
-	}
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
-	public void setScore(int n)
-        {
-	    this.playerScore = n;
-        }
-        
-	public int getScore()
-        {
-	    return this.playerScore;
-        }
+    public String getName()
+    {
+        return this.name;
+    }
 
-        public int getSymbol()
-	{
-            return this.playerSymbol;	
-	}
+    public void setSymbol(int n)
+    {
+        playerSymbol = n;
+    }
+
+    public void setScore(int n)
+    {
+        this.playerScore = n;
+    }
+
+    public int getScore()
+    {
+        return this.playerScore;
+    }
+
+    public int getSymbol()
+    {
+        return this.playerSymbol;
+    }
 }

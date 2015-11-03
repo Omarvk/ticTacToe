@@ -50,39 +50,34 @@
 		</table>
 	</div>
 	<script>
-			$(document).ready(function() {
-				for(var x = 0; x < 3; x++){
+			$(document).ready(function() 
+			{
+				for(var x = 0; x < 3; x++)
+				{
 					for(var y = 0; y < 3; y++)
 					{
 						var check = $('#d'+x+''+y).html();
-						if(check == 1){
-							$('#d'+x+''+y).html('<img src="../graphics/red_x.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');										}		
-					      else if(check == 2){
+						if(check == 1)
+						{
+							$('#d'+x+''+y).html('<img src="../graphics/red_x.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');
+						}
+						else if(check == 2)
+						{
+				    	    $('#d'+x+''+y).html('<img src="../graphics/blue_circle.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');
 						}	
-						else{
+						else
+						{
 				    	    $('#d'+x+''+y).html('<img src="../graphics/empty.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');
 						}
 					}
 				}
-				/*var check = $('#d0').html();
-				if(check == 32){
-					$('#d0').html('<img src="../graphics/empty.svg" id="i00" alt="Cell 0.0" />');
-				}
-				if(check == 1){
-					$('#d0').html('<img src="../graphics/red_x.svg" id="i00" alt="Cell 0.0" />');
-                } */			
 				$('img').click(function(event){
-			   		//var col = $(this).parent().children().index($(this));
-			   		//var row = $(this).parent().parent().children().index($(this).parent());
 			   		$.post("/move", {cell: event.target.id } );
 					window.location.reload();
-                    
-							
 					//location.reload();
 					//$(location).attr('href',"/");
-			   		//$(this).attr("src", "../graphics/red_x.svg");
-					//$(this).attr("src", "../graphics/blue_circle.svg");
 				});
+
 			});
 			
 	</script>

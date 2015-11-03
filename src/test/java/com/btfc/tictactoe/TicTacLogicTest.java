@@ -78,7 +78,27 @@ public class TicTacLogicTest{
 	game.newGame();
 	assertTrue(Arrays.deepEquals(arrayToCompare, game.board.getField()));
     }
-   
+/**    @Test
+    public void testThatNewGameFunctionSetsBooleanIsGameWonToFalseAgain()
+    {
+	final int X = 88;
+        final int Y = 79;
+        final int E = 32; //shorthand for empty                                                                                                                                                 
+        TicTacLogic game = new TicTacLogic();
+        game.makeMove(0,0);
+	game.makeMove(1,0);
+	game.makeMove(1,1);
+	game.makeMove(2,0);
+	boolean check = game.isGameOver;
+	game.makeMove(2,2);
+	//Game should be won now
+	//int[][] wonGame = {{E,E,E}, {E,E,E}, {X,X,X}};
+        
+	//game.board.setField(wonGame3);
+	assertEquals(check, game.isGameOver);
+	
+    }
+**/
     @Test
     public void testIsGameWonHorizontalFirstLine()
     {

@@ -52,8 +52,8 @@
 	<script>
 			$(document).ready(function() 
 			{
-				for(var x = 0; x < 3; x++)
-				{
+				/*for(var x = 0; x < 3; x++)
+				{ 
 					for(var y = 0; y < 3; y++)
 					{
 						var check = $('#d'+x+''+y).html();
@@ -70,7 +70,7 @@
 				    	    $('#d'+x+''+y).html('<img src="../graphics/empty.svg" id="i'+x+''+y+'" alt="Cell '+x+'.'+y+'" />');
 						}
 					}
-				}
+				}*/ 
 				$('img').click(function(event){
 			   		$.post("/move", {cell: event.target.id } );
 					window.location.reload();

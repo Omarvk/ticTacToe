@@ -19,8 +19,21 @@ public class Controller {
 			int size = 3;
 			for(int x = 0; x < size; x++){
 				for(int y = 0; y < size; y++){
-					int tala = tic.getBoard().getField()[x][y];				
-					String value  = String.valueOf(tala);
+					int tala = tic.getBoard().getField()[x][y];
+					String value = "";
+				    if( tala == 1)
+					{
+						value = "<img src=\"../graphics/red_x.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+					}
+					else if( tala == 2)
+					{
+						value = "<img src=\"../graphics/blue_circle.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+					}
+					else
+					{
+						value = "<img src=\"../graphics/empty.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
+					}
+					//String value  = String.valueOf(tala);
 					String cell = "a" + String.valueOf(x) + String.valueOf(y);
 					attri.put(cell, value);
 					System.out.println(cell+ " wat " +value );

@@ -7,11 +7,29 @@ td
 {
 	width: 750px;
 	background: #F5F5F5;
-	margin: 15px;
+	float: left;
+	display: inline-block;
 }
 
 #board img
 {
 	height: 100px;
 	width: 200px;
+}
+
+#scorearea
+{
+	float: right;
+	margin-left: 10px;
+}
+
+#playarea
+{
+	width: 1000px;
+	margin: 35px;
+}
+
+#score
+{
+	font-weight: bold;
 }

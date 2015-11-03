@@ -8,46 +8,60 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
 	<body>
-	<p>
-		Lorem ipsum tralala magabelti. ${Message}
-</p>
-	<div id="board">
-		<table id="tictactoetable" class="table table-responsive table-bordered">
-			<tr>
-				<td id="td00">
-					<div id="d00">${a00}</div>
-				</td>
-				<td id="td01">
-					<div id="d01">${a01}</div>
-				</td>
-				</td>
-				<td id="td02">
-					<div id="d02">${a02}</div>
-				</td>
-			</tr>
-			<tr>
-				<td id="td10">
-					<div id="d10">${a10}</div>
-				</td>
-				<td id="td11">
-					<div id="d11">${a11}</div>
-				</td>
-				<td id="td12">
-					<div id="d12">${a12}</div>
-				</td>
-			</tr>
-			<tr>
-				<td id="td20">
-				 	<div id="d20">${a20}</div>
-				</td>
-				<td id="td21">
-					 <div id="d21">${a21}</div>
-				</td>
-				<td id="td22">	
-					 <div id="d22">${a22}</div>
-				</td>
-			</tr>
-		</table>
+	<div id="playarea">
+		<div id="board">
+			<table id="tictactoetable" class="table table-responsive table-bordered">
+				<tr>
+					<td id="td00">
+						<div id="d00">${a00}</div>
+					</td>
+					<td id="td01">
+						<div id="d01">${a01}</div>
+					</td>
+					</td>
+					<td id="td02">
+						<div id="d02">${a02}</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="td10">
+						<div id="d10">${a10}</div>
+					</td>
+					<td id="td11">
+						<div id="d11">${a11}</div>
+					</td>
+					<td id="td12">
+						<div id="d12">${a12}</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="td20">
+						<div id="d20">${a20}</div>
+					</td>
+					<td id="td21">
+						<div id="d21">${a21}</div>
+					</td>
+					<td id="td22">	
+						<div id="d22">${a22}</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="scorearea">
+			<p id="score">
+				${Message} <br />
+				Score:
+			</p>
+			<p>
+				Player 1: 
+			</p>
+			<p>
+				Player 2: 
+			</p>
+			<p>
+				<button type="button" id="newGame" class="btn btn-default">New Game</button>
+			</p>
+		</div>
 	</div>
 	<script>
 			$(document).ready(function() 
@@ -71,11 +85,17 @@
 						}
 					}
 				}*/ 
-				$('img').click(function(event){
+				$('img').click(function(event)
+				{
 			   		$.post("/move", {cell: event.target.id } );
 					window.location.reload();
 					//location.reload();
 					//$(location).attr('href',"/");
+				});
+				$('#newGame').click(function()
+				{
+					$.post("/newGame", {});
+					window.location.reload();
 				});
 
 			});

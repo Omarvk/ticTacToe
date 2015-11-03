@@ -9,58 +9,30 @@ public class Interface
 {
     public void  printMenu()
     {
-     System.out.print("Welcome to Tic Tac Toe\n");
-     System.out.print("----------------------\n");
-     System.out.print("1. For new game\n");
-     System.out.print("2. To exit game\n");
-     System.out.print("----------------------\n");
+        System.out.print("Welcome to Tic Tac Toe\n");
+        System.out.print("----------------------\n");
+        System.out.print("1. For new game\n");
+        System.out.print("2. To exit game\n");
+        System.out.print("----------------------\n");
     }
 
     public String  enterPlayerName() throws IOException 
     {
-    BufferedReader in = new BufferedReader(
-    	    new InputStreamReader(System.in));
-     
-     String newPName = in.readLine();
-     
+        BufferedReader in = new BufferedReader(
+            new InputStreamReader(System.in));
+        String newPName = in.readLine();
 
-     return newPName;
+        return newPName;
     }
 
     public void invalidMove()
     {
-   	System.out.print("Invalid move");
+        System.out.print("Invalid move");
     }
-//This need to be refactored once we have player name implemented properly
+    //This need to be refactored once we have player name implemented properly
     public void playerWins(String pName)
     {
-      System.out.print(pName + " wins!");
+        System.out.print(pName + " wins!");
     }
-
 }
-
-
-/*
-
-	System.out.println("Enter the x, y coordinates you want move to");
-	x = (System.in.read() - 48);
-	//clear out the comma and space
-	System.in.read();
-	System.in.read();
-	y = (System.in.read() - 48);
-	//remove trailing newline character
-	System.in.read();
-	System.out.println(x + ", " + y);
-
-
-	
-     System.out.println("Welcome to Tic Tac Toe");
-     System.out.println("----------------------");
-     System.out.println("1. For new game ");
-     System.out.println("2. To exit game ");
-     System.out.println("----------------------");
-*/
-
-
-
 

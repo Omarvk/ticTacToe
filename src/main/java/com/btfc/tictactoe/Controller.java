@@ -78,6 +78,6 @@ public class Controller
     public static void main(String[] args) 
     {
         staticFileLocation("/public");
-        new Controller(new TicTacLogic());					
+        new Controller(new TicTacLogic());
     }
 }

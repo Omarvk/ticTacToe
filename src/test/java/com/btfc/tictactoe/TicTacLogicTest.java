@@ -55,7 +55,30 @@ public class TicTacLogicTest{
 	//Test that field has not changed.
         assertTrue(Arrays.deepEquals(game2.board.getField(), game.board.getField()));
     }
+    @Test
+    public void testSymbolsHasChanged()
+    {
+	TicTacLogic game = new TicTacLogic();
+	game.makeMove(1,1);
+	int X = 1;
+	assertEquals(X, game.getSymbol(1,1));
 
+    }
+    @Test
+    public void testNewGameInitialization()
+    {
+	TicTacLogic game = new TicTacLogic();
+        game.makeMove(1,1);
+        game.makeMove(1,0);
+	game.makeMove(2,0);
+	game.makeMove(1,2);
+
+	int[][] arrayToCompare = new int[game.board.getXDimension()][game.board.getYDimension()];
+	arrayToCompare = game.board.getField();
+	game.newGame();
+	assertTrue(Arrays.deepEquals(arrayToCompare, game.board.getField()));
+    }
+   
     @Test
     public void testIsGameWonHorizontalFirstLine()
     {

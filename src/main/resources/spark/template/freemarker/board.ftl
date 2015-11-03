@@ -49,22 +49,12 @@
 		</div>
 		<div id="scorearea">
 			<p id="score">
-<<<<<<< HEAD
-				${Message} <br />
-				Score:
-			</p>
-			<p>
-				${P1N}: ${P1} 
-			</p>
-			<p>
-=======
 				${Message}
-			</p> 
+			</p>
 			<p id="score">
 				${P1N}: ${P1} 
 			</p>
 			<p id="score">
->>>>>>> d7bfaef28012d8daaf82d6c2b89e3589a546e83e
 				${P2N}: ${P2}
 			</p>
 			<p>

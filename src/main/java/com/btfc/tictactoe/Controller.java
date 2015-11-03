@@ -8,7 +8,7 @@ import java.awt.Point;
 
 public class Controller {
 	private static Map<String, Object> attri = new HashMap<>();
-	private String results = "";
+	private String results = "Start Game!";
 	public Controller(final TicTacLogic tic) {
 		get("/",(req, res) ->	
 		{
@@ -33,7 +33,7 @@ public class Controller {
 					{
 						value = "<img src=\"../graphics/empty.svg\" id=\"i"+x+""+y+"\" alt=\"Cell "+x+"."+y+"\" />";
 					}
-					// put string into hashmap for modelview
+					// put strings into hashmap for modelview, results, name and scores.
 					String cell = "a" + String.valueOf(x) + String.valueOf(y);
 					attri.put(cell, value);
 					attri.put("Message", results);
@@ -58,12 +58,20 @@ public class Controller {
 			int x = Integer.parseInt(px);
 			int y = Integer.parseInt(py);
 			//here we need to do something smart with the point
+			// check result if game is won and make move
 			results = tic.makeMove(x, y);
+			// get which player turn. if game is won or over it returns empty string and does not change the result string
+			if(!(tic.getPlayerTurn().equals("")))
+			{
+			    results = tic.getPlayerTurn();
+			}
 			return null;
 		});
 		post("/newGame", (req, res) ->
 		{
+		    
 			tic.newGame();
+			results = "New Game!";
 			return null;
 		});
 	}

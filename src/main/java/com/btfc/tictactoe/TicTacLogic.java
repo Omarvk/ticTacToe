@@ -45,7 +45,22 @@ public class TicTacLogic{
 	{
 		return player2.getName();
 	}
-   
+	
+	public String getPlayerTurn()
+	{
+		if(!isGameOver)
+		{
+		    if(counter % 2 == 0)
+	        {
+	            return "Player 1 turn";
+	        }
+	        else
+	        {
+	            return "Player 2 turn";
+	        }
+		}
+		return "";
+	}
     //returns the result of the action as a string
     //returns a empty string upon success
     public String makeMove(int x, int y)
@@ -54,7 +69,7 @@ public class TicTacLogic{
 	//Take no action if the game is over
 	if(isGameOver)
 	{
-	    return "Game is over";
+	    return "Game is over.";
 	}
         //Check which players turn it is
         if(counter % 2 == 0)

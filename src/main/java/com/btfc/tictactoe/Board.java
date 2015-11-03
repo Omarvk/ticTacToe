@@ -17,13 +17,13 @@ public class Board{
     }
     public void initializeField()
     {
-        for(int i = 0; i < XDIMENSION; i++)
+	for(int i = 0; i < XDIMENSION; i++)
+	{
+	    for(int j = 0; j < YDIMENSION; j++)
 	    {
-		for(int j = 0; j < YDIMENSION; j++)
-		    {
-			field[i][j] = EMPTY;
-		    }
+		field[i][j] = EMPTY;
 	    }
+	}
         return;
     }
     
@@ -47,11 +47,16 @@ public class Board{
         this.field = field;
         return;
     }
-    public void setSymbol(Point move, int symbol){
-	
-	this.field[move.x][move.y] = symbol;
+
+    public void setSymbol(int x, int y, int symbol)
+    {
+	this.field[x][y] = symbol;
     }
-    
+
+    public int getSymbol(int x, int y)
+    {
+	return this.field[x][y];
+    }
     
 
 }

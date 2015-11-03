@@ -1,4 +1,3 @@
-
 package com.btfc.tictactoe;
 import java.awt.Point;
 
@@ -8,8 +7,8 @@ public class TicTacToeService {
 	public Board getBoard (){
 		return board;
 	}
-	public Board setBoard(Point move){
-		board.setSymbol(move, 1);
+	public Board setBoard(int x, int y){
+		board.setSymbol(x, y, 1);
 		return board;
 	}
 

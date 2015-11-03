@@ -50,12 +50,12 @@
 		<div id="scorearea">
 			<p id="score">
 				${Message}
+			</p> 
+			<p id="score">
+				${P1N}: ${P1} 
 			</p>
 			<p id="score">
-				Player 1: 
-			</p>
-			<p id="score">
-				Player 2: 
+				${P2N}: ${P2}
 			</p>
 			<p>
 				<button type="button" id="newGame" class="btn btn-default">New Game</button>

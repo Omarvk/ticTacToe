@@ -4,27 +4,45 @@ import java.awt.Point;
 
 import com.btfc.tictactoe.Player;
 
-public class HumanPlayer extends Player
+public class HumanPlayer implements Player
 {
-    //This is a very lazy temporory implementation
-    public Point makeMove()
-    {
-        int x = 0, y = 0; 
-	try{
-	System.out.println("Enter the x, y coordinates you want move to");
-	x = (System.in.read() - 48);
-	//clear out the comma and space
-	System.in.read();
-	System.in.read();
-	y = (System.in.read() - 48);
-	//remove trailing newline character
-	System.in.read();
-	System.out.println(x + ", " + y);
-	}
-	catch(Exception e)
+        private String name;
+        private int playerScore;
+	private int playerSymbol;
+		
+        public void Player()
 	{
-	    //heh
+	    this.name = "Guest";
+	    this.playerScore = 0;
 	}
-	return new Point(x,y);
-    }
+
+        public void setName(String name)
+        {
+            this.name = name;
+        }
+       
+	public String getName()
+        {
+	    return this.name;
+        }
+
+        public void setSymbol(int n)
+	{
+            playerSymbol = n;	
+	}
+
+	public void setScore(int n)
+        {
+	    this.playerScore = n;
+        }
+        
+	public int getScore()
+        {
+	    return this.playerScore;
+        }
+
+        public int getSymbol()
+	{
+            return this.playerSymbol;	
+	}
 }

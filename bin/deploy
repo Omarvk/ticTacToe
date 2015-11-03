@@ -3,6 +3,9 @@
 cp README.md src/markdown
 #Execute our tasks
 gradle markdownToHtml
+
+gradle check 2> build/gen-html/checkStyle.txt
+
 gradle installDist
 #Creates a deployable build and deploys it to /tmp
 cp -r build/install/ticTacToe /tmp/runTest

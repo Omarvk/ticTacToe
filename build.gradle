@@ -36,7 +36,9 @@ dependencies {
     compile 'com.sparkjava:spark-core:2.3'
 	compile 'junit:junit:4.12'
 	compile 'org.seleniumhq.selenium:selenium-java:2.48.2'
-	
+	compile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
+	compile 'org.seleniumhq.webdriver:webdriver-firefox:0.9.7089'
+	compile 'org.seleniumhq.webdriver:webdriver-firefox:0.9.7376'
 	//compile 'com.google.code.gson:gson:2.2.4'
 	compile 'com.sparkjava:spark-template-freemarker:2.3'
 	compile 'br.com.thiagomoreira.liferay.plugins.markdown-display-app:markdown-display-app:1.0.0'

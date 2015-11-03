@@ -9,7 +9,7 @@
 	</head>
 	<body>
 	<p>
-		Lorem ipsum tralala magabelti.
+		Lorem ipsum tralala magabelti. ${Message}
 </p>
 	<div id="board">
 		<table id="tictactoetable" class="table table-responsive table-bordered">

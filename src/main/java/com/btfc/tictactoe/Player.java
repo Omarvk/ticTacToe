@@ -9,6 +9,7 @@ public class Player
 {
         private String name;
         private int playerScore;
+	private int playerSymbol;
 		
 	public Player()
 	{
@@ -26,6 +27,11 @@ public class Player
 	    return this.name;
         }
 
+        public void setSymbol(int n)
+	{
+            playerSymbol = n;	
+	}
+
 	public void setScore(int n)
         {
 	    this.playerScore = n;
@@ -35,4 +41,9 @@ public class Player
         {
 	    return this.playerScore;
         }
+
+        public int getSymbol()
+	{
+            return this.playerSymbol;	
+	}
 }

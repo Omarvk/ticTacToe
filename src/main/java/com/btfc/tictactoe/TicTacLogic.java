@@ -30,7 +30,7 @@ public class TicTacLogic{
     //returns a empty string upon success
     public String makeMove(int x, int y)
     {
-        int symbol;
+	Player actingPlayer;
 	//Take no action if the game is over
 	if(isGameOver)
 	{
@@ -39,28 +39,28 @@ public class TicTacLogic{
         //Check which players turn it is
         if(counter % 2 == 0)
 	{
-	    symbol = 1; 
+	    actingPlayer = player1;
 	}
 	else
 	{
-            symbol = 2;	
+	    actingPlayer = player2;
 	}
 	counter++;
 	//Check if the selected field is empty
         if(board.getSymbol(x, y) == ' ')
 	{
-            board.setSymbol(x, y, symbol);
+            board.setSymbol(x, y, actingPlayer.getSymbol());
 	    //check if someone has won the game
 	    if(isGameWon())
 	    {
 	        isGameOver = true;
-	        return "winner!";
+	        return actingPlayer.getName() + " won!";
 	    }
 	    //check if the game is drawn
 	    if(counter == 9)
 	    {
 	        isGameOver = true;
-	        return "draw"; 
+	        return "Draw"; 
 	    }
 	    return "";
 	}
@@ -76,69 +76,11 @@ public class TicTacLogic{
     {
         board.initializeField();
 	isGameOver = false;
+	player1.setName("Player1");
+	player2.setName("Player2");
+	player1.setSymbol(1);
+	player2.setSymbol(2);
     }
-
-    /*
-    public void playRound()
-    {
-        board.initializeField();
-        Point move;
-        int symbol = 0;
-        //make moves while the field is not full or either player won                                  
-        for(int i = 0; i < board.XDIMENSION * board.YDIMENSION; i++)
-	{
-		while(true)
-		{
-		    this.printField();
-		    //let the players make their move                                                      
-		    if(i % 2 == 0)
-		    {
-			move = player1.makeMove();
-			symbol = board.X;
-		    }
-		    else
-		    {
-			move = player2.makeMove();
-			symbol = board.O;
-		    }
-		    //check if the move is within the bounds of our array  
-		    if(move.x >= board.XDIMENSION || move.x < 0 || move.y >= board.YDIMENSION || move.y < 0 )
-		    {
-			//tService.invalidMove();
-			continue;
-		    }
-		    //check if the chosen field is empty                                                   
-		    else if(board.getField()[move.x][move.y] == board.EMPTY)
-		    {
-			board.setSymbol(move,symbol);
-			break;
-		    }
-		    else //if it's not, let the same player choose again                                   
-		    {
-			//tService.invalidMove();
-			continue;
-		    }
-		}
-
-		if(isGameWon())
-		{
-		    this.printField();
-		    if(symbol == board.X)
-		    {
-			
-		//	tService.playerWins(this.player1.getName());
-			return;
-		    }
-		    else
-		   {
-		       
-		  //     tService.playerWins(this.player2.getName());
-		       return;
-	    	  }
-	        }
-        }
-    }
-    */
 
     public boolean isGameWon()
     {

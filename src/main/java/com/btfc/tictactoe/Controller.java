@@ -8,7 +8,7 @@ import java.awt.Point;
 
 public class Controller {
 	private static Map<String, Object> attri = new HashMap<>();
-	attri.put("Message","");
+	private String results = "";
 	public Controller(final TicTacLogic tic) {
 		get("/",(req, res) ->	
 		{
@@ -36,6 +36,7 @@ public class Controller {
 					// put string into hashmap for modelview
 					String cell = "a" + String.valueOf(x) + String.valueOf(y);
 					attri.put(cell, value);
+					attri.put("Message", results);
 				}
 	
 			
@@ -53,18 +54,17 @@ public class Controller {
 			int x = Integer.parseInt(px);
 			int y = Integer.parseInt(py);
 			//here we need to do something smart with the point
-			String result;
-			result = tic.makeMove(x, y);
-			attri.put("Message", result);
+			results = tic.makeMove(x, y);
 			return null;
 		});
 		post("/newGame", (req, res) ->
 		{
 			tic.newGame();
 			return null;
-		}
+		});
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		staticFileLocation("/public");
 		new Controller(new TicTacLogic());					
 	}	

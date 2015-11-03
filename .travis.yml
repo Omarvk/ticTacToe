@@ -5,3 +5,6 @@ jdk:
 branches:
   only:
     - master
+script:
+  - ./gradlew check
+  - ./gradlew seleniumXvfb

@@ -49,6 +49,7 @@
 		</div>
 		<div id="scorearea">
 			<p id="score">
+				${Message} <br />
 				Score:
 			</p>
 			<p>

@@ -36,6 +36,14 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+    /*Selenium test dependencies
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:seleniumjava:2.48.2'
+    **/
+
+
 }
 
 String port = System.getenv("PORT");
@@ -59,3 +67,21 @@ apply plugin: 'org.kordamp.markdown.convert'
 apply plugin: 'checkstyle'
 tasks.withType(Checkstyle) {ignoreFailures = true }
 
+sourceSets {
+  selenium
+  seleniumXvfb
+}
+
+task seleniumXvfb(type: Test, dependsOn: installDist) {
+
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+    environment "DISPLAY", ":99"
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/ticTacToe/bin/ticTacToe  &'.execute()
+    }  
+    doLast {
+        'sh -e /etc/init.d/xvfb stop'.execute()
+    }
+}

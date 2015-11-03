@@ -12,10 +12,10 @@
 --> 
 <!-- just added rightCurly, basicOffset is default 4 and braceAdjustment after /n is value 0-->
 <module name="RightCurly">
-     <property name="Rcurly" value="alone"/>
+     <property name="option" value="alone"/>
 </module>
 <module name="Indentation">
-  <property name="basicOffset"/>
+  <property name="basicOffset" value="4"/>
     <property name="braceAdjustment" value="0"/>
 
 </module>

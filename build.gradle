@@ -54,6 +54,11 @@ buildscript {
     }
 }
 
+//heroku dependency
+task stage {
+  dependsOn installDist
+}
+
 apply plugin: 'org.kordamp.markdown.convert'
 
 

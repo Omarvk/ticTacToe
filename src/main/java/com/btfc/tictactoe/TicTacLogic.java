@@ -9,13 +9,13 @@ public class TicTacLogic{
     HumanPlayer player1;
     HumanPlayer player2;
     public Board board;
-    public TService tService;
+   // public TService tService;
     public TicTacLogic()
     {
 	board = new Board();
         player1 = new HumanPlayer();
         player2 = new HumanPlayer();
-	tService = new TService();
+	//tService = new TService();
     }
 
     public void printField()
@@ -65,7 +65,7 @@ public class TicTacLogic{
 		    //check if the move is within the bounds of our array  
 		    if(move.x >= board.XDIMENSION || move.x < 0 || move.y >= board.YDIMENSION || move.y < 0 )
 		    {
-			tService.invalidMove();
+			//tService.invalidMove();
 			continue;
 		    }
 		    //check if the chosen field is empty                                                   
@@ -76,7 +76,7 @@ public class TicTacLogic{
 		    }
 		    else //if it's not, let the same player choose again                                   
 		    {
-			tService.invalidMove();
+			//tService.invalidMove();
 			continue;
 		    }
 		}
@@ -87,13 +87,13 @@ public class TicTacLogic{
 		    if(symbol == board.X)
 		    {
 			
-			tService.playerWins(this.player1.getName());
+		//	tService.playerWins(this.player1.getName());
 			return;
 		    }
 		    else
 		   {
 		       
-		       tService.playerWins(this.player2.getName());
+		  //     tService.playerWins(this.player2.getName());
 		       return;
 	    	  }
 	        }

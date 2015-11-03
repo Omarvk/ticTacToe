@@ -26,6 +26,17 @@ public class TicTacLogic{
         return board.getSymbol(x, y); 
     }
 
+    public String getPlayer1Score()
+    {
+        return Integer.toString(player1.getScore()); 
+    }
+
+    public String getPlayer2Score()
+    {
+        return Integer.toString(player2.getScore()); 
+    }
+
+
     //returns the result of the action as a string
     //returns a empty string upon success
     public String makeMove(int x, int y)
@@ -54,6 +65,7 @@ public class TicTacLogic{
 	    if(isGameWon())
 	    {
 	        isGameOver = true;
+		actingPlayer.setScore(actingPlayer.getScore() + 1);
 	        return actingPlayer.getName() + " won!";
 	    }
 	    //check if the game is drawn

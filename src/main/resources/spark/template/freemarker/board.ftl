@@ -49,13 +49,12 @@
 		</div>
 		<div id="scorearea">
 			<p id="score">
-				${Message} <br />
-				Score:
+				${Message}
 			</p>
-			<p>
+			<p id="score">
 				Player 1: 
 			</p>
-			<p>
+			<p id="score">
 				Player 2: 
 			</p>
 			<p>

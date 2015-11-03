@@ -130,7 +130,7 @@ This is a schematic of our intended graphical interface. Since a TicTacToe requi
         }  
     }  
 
-##PostgresSQL
+###PostgresSQL
 * The unit of indentation is four spaces. Such should be used in multi-lined queries.
 * Comments should be done judiciously, well written and clear.
 * Blank spaces should be used to improve readability.

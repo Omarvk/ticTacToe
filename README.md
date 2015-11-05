@@ -1,5 +1,5 @@
 #TicTacToe
-[![Build Status](https://travis-ci.org/BTFC/ticTacToe.png)](https://travis-ci.org/BTFC/ticTacToe)
+[![Build Status](https://travis-ci.org/Omarvk/ticTacToe.png)](https://travis-ci.org/Omarvk/ticTacToe)
 
 A very simple web-based implementation of the classic board game TicTacToe.
 

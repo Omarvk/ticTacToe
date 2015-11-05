@@ -49,12 +49,17 @@ dependencies {
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
-    testCompile 'junit:junit:4.12'
+
     //Selenium test dependencies
-    seleniumCompile 'junit:junit:4.11'
+    testCompile 'junit:junit:4.12'
+
+    seleniumCompile 'junit:junit:4.12'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
-    seleniumXvfbCompile 'junit:junit:4.11'
-    seleniumXvfbCompile 'org.seleniumhq.selenium:seleniumjava:2.48.2'
+
+    seleniumXvfbCompile 'junit:junit:4.12'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
 
    
 
